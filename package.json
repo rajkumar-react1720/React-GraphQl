@@ -4,8 +4,7 @@
     "description": "graphql-project",
     "main": "src/index.js",
     "scripts": {
-        "start": "node src/index.js",
-        "build": "babel dist"
+        "start": "node src/index.js"
     },
     "dependencies": {
         "@apollo/server": "^4.7.4",
