@@ -1,5 +1,5 @@
 const DataLoader = require('dataloader');
-const db = require('../dbAdapter').pgConnection;
+const db = require('../../dbAdapter').pgConnection;
 
 module.exports =()=>({
     menuLoader: new DataLoader(async restaurant_ids => {

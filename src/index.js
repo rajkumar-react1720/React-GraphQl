@@ -3,6 +3,7 @@ const express = require('express');
 const typeDefs = require('./typeDefs/typeDefs').typeDefs;
 const resolvers = require('./resolver/resolver').resolvers;
 const { menuLoader } = require('./loaders/menuLoader')();
+require('dotenv').config();
 
 const app = express();
 
@@ -19,9 +20,9 @@ async function startServer() {
 }
 
 startServer();
-
-app.listen({ port: 4000 }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000`)
+const portNumber = Number.parseInt(process.env.PORT) || 4000;
+app.listen({ port: portNumber }, () =>
+    console.log(`🚀 Server ready at http://localhost:${portNumber}`)
 );
 
 

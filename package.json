@@ -2,9 +2,10 @@
     "name": "graphql-project",
     "version": "1.0.0.",
     "description": "graphql-project",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node src/index.js",
+        "build": "babel dist"
     },
     "dependencies": {
         "@apollo/server": "^4.7.4",
@@ -19,5 +20,10 @@
         "graphql-server-express": "^1.4.1",
         "graphql-tools": "^9.0.0",
         "pg-promise": "^11.5.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.22.9",
+        "@babel/core": "^7.22.9",
+        "@babel/preset-env": "^7.22.9"
     }
 }

@@ -1,4 +1,4 @@
-const db = require('../dbAdapter').pgConnection;
+const db = require('../../dbAdapter').pgConnection;
 
 const resolvers = {
   Query: {
