@@ -2,6 +2,7 @@ const { ApolloServer } = require('apollo-server-express') // To combaine schema 
 const express = require('express');
 const typeDefs = require('./typeDefs/typeDefs').typeDefs;
 const resolvers = require('./resolver/resolver').resolvers;
+const { menuLoader } = require('./loaders/menuLoader')();
 
 const app = express();
 
@@ -9,6 +10,9 @@ async function startServer() {
     const apolloServer = new ApolloServer({
         typeDefs,
         resolvers,
+        context:()=>({
+            menuLoader
+        })
     });
     await apolloServer.start();
     apolloServer.applyMiddleware({ app });
